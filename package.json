@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "opencode-plugins",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.1.2",
+  "scripts": {
+    "test": "pnpm -r --if-present run test",
+    "check": "pnpm -r --if-present run check",
+    "build": "pnpm -r --if-present run build"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "oc-bash-guard",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./bash-guard.ts",
+  "exports": {
+    ".": "./bash-guard.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "check": "bun test"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": "*",
+    "@opencode-ai/sdk": "*"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

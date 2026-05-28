@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "oc-timer",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    "./tui": {
+      "import": "./tui.tsx"
+    }
+  },
+  "scripts": {
+    "check": "bun build tui.tsx --target=bun --outfile=/tmp/oc-timer-check.js --external solid-js --external @opentui/solid --external @opentui/solid/jsx-dev-runtime"
+  },
+  "engines": {
+    "opencode": ">=1.14.22"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": "*",
+    "@opentui/core": "*",
+    "@opentui/solid": "*",
+    "solid-js": "*"
+  }
+}

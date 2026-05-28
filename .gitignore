@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Build outputs
+build/
+dist/
+coverage/
+
+# Logs
+*.log
+
+# Package-manager state
+.bun-install-cache/
