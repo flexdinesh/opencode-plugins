@@ -24,20 +24,24 @@ Path rules scan bash command text only. They skip URLs, use lexical resolution, 
 
 ## Install Locally
 
-From this plugin package:
+Add this local package to `~/.config/opencode/package.json`:
 
-```sh
-cd packages/plugins/oc-bash-guard
-npm link
+```json
+{
+  "dependencies": {
+    "oc-bash-guard": "file:../../workspace/opencode-plugins/packages/plugins/oc-bash-guard"
+  }
+}
 ```
 
-From `~/.config/opencode`:
+Install from the OpenCode config directory:
 
 ```sh
-npm link --save oc-bash-guard
+cd ~/.config/opencode
+pnpm install
 ```
 
-Add the plugin to your OpenCode config:
+Add the installed plugin to your OpenCode config:
 
 ```json
 {
@@ -45,9 +49,7 @@ Add the plugin to your OpenCode config:
 }
 ```
 
-`--save` keeps the linked dependency in `~/.config/opencode/package.json`, so future `npm install` runs do not prune it.
-
-Remove old `~/.config/opencode/plugins/bash-guard.ts`, `guards.ts`, and `config.ts` symlinks if they exist, then restart OpenCode.
+Restart OpenCode after changing plugin files, config, or dependencies.
 
 ## Customize
 

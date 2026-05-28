@@ -59,18 +59,24 @@ pnpm --filter oc-timer check
 
 ## Local OpenCode usage
 
-For local package development, link the package from the plugin package directory:
+Install local plugins by adding a `file:` dependency to `~/.config/opencode/package.json`:
 
-```sh
-cd packages/plugins/<plugin-name>
-npm link
-cd ~/.config/opencode
-npm link --save <plugin-name>
+```json
+{
+  "dependencies": {
+    "oc-bash-guard": "file:../../workspace/opencode-plugins/packages/plugins/oc-bash-guard"
+  }
+}
 ```
 
-Then reference the linked package from OpenCode config.
+Then install from the OpenCode config directory:
 
-Server plugins go in `opencode.json`:
+```sh
+cd ~/.config/opencode
+pnpm install
+```
+
+Server plugins go in `opencode.json` or `opencode.jsonc`:
 
 ```json
 {
@@ -78,7 +84,7 @@ Server plugins go in `opencode.json`:
 }
 ```
 
-TUI plugins go in `tui.json` and usually use the package TUI export:
+TUI plugins go in `tui.json` and use the installed package export:
 
 ```json
 {
@@ -86,4 +92,4 @@ TUI plugins go in `tui.json` and usually use the package TUI export:
 }
 ```
 
-Relative file paths can also be used while iterating locally. Restart OpenCode after changing plugin files, config, or dependencies.
+Restart OpenCode after changing plugin files, config, or dependencies.
